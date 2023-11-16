@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(42, 42, 199, 0.682);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    transition: background-image 0.5s ease;
+}
+
+h1 {
+    color: #fff;
+    font-size: 26px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.container {
+    max-width: 480px;
+    height: 320px;
+    margin: 50px auto;
+    background-color: rgba(178, 178, 238, 0.367);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.relogio {
+    color: #fff;
+    font-size: 6em;
+    padding: 25px;
+    margin: 50px auto 10px auto;
+    font-weight: bold;
+}
+
+.tasks {
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 10px;
+    margin-top: -30px;
+}
+
+.task-list {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#addTaskButton {
+    border: none;
+    background-color: rgba(178, 178, 238, 0.367);
+    cursor: pointer;
+    padding: 15px 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.styled-input {
+    width: 20%;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #0056b3;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.pomodoroBtn, .shortBreak, .longBreak {
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    padding: 5px 15px;
+    background-color: rgba(178, 178, 238, 0);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.mainBtn {
+    font-weight: bold;
+    font-size: 24px;
+    color: rgba(42, 42, 199, 0.682);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 20px 60px;
+    margin: 35px auto;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mainBtn:active {
+    transform: translateY(2px);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.7);
+    background-color: rgba(42, 42, 199, 0.682);
+}
+
+.mainBtn:focus {
+    outline: none;
+}
+
+button:active {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(2px);
+}
+
+.buttons {
+    padding: 17px;
+}
+
+#setting {
+    position: fixed;
+    top: 65px;
+    right: 35%;
+    background-color: rgba(178, 178, 238, 0.367);
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#darkModeButton {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    border: none;
+}
+
+#darkModeButton:hover {
+    color: black;
+    background-color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 90%;
+        margin: 40px auto;
+        padding: 10px;
+    }
+
+    .relogio {
+        font-size: 4em;
+    }
+
+    .styled-input {
+        width: 50%;
+    }
+
+    .pomodoroBtn, .shortBreak, .longBreak {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    #setting {
+        top: 20px;
+        left: 80%;
+        transform: translateX(-50%);
+    }
+
+    button {
+        max-width: 100%;
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .mainBtn {
+        padding: 15px 40px;
+        font-size: 20px;
+    }
+}

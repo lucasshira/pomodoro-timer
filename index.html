@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Pomodoro Timer</title>
+</head>
+<body>
+    <h1>Pomodoro Timer</h1>
+
+    <section class="container">
+        <button class="pomodoroBtn">Pomodoro</button>
+        <button class="shortBreak">Short Break</button>
+        <button class="longBreak">Long Break</button>
+        <p class="relogio">25:00</p>
+        <button class="mainBtn">START</button>
+    </section>
+
+    <div class="tasks">
+        <p>#1</p>
+        <p id="taskDescription">Time to focus!</p>
+    </div>
+
+    <div class="task-list">
+        <button id="addTaskButton" onclick="openTaskDialog()">Add Task</button>
+    </div>
+
+    <audio id="alarmSound">
+        <source src="assets/sound/alarm-clock-01.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="darkModeButton"><i class="fa-solid fa-moon fa-2xl"></i></button>
+
+    <div class="setting-content">
+        <button id="setting"><i class="fa-solid fa-gear"></i></button>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            Set the Pomodoro Timer:
+            <span class="close">&times;</span>
+            <input id="inputTimePomodoro"/>
+            <button id="okBtn">OK</button>
+        </div>
+    </div>
+
+    <script src="assets/script.js"></script>
+    <script src="https://kit.fontawesome.com/c92820bee5.js" crossorigin="anonymous"></script>
+</body>
+</html>
