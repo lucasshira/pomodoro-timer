@@ -252,12 +252,11 @@ darkModeButton.addEventListener('click', function () {
     if (darkMode) {
         document.body.style.backgroundColor = '#000';
         container.style.backgroundColor = '#000';
-        mainBtn.style.backgroundColor = '#000';
+        mainBtn.style.backgroundColor = '#fff';
         pomodoroBtn.style.backgroundColor = '#000';
         shortBreak.style.backgroundColor = '#000';
         longBreak.style.backgroundColor = '#000';
-        mainBtn.style.color = '#fff';
-        darkModeButton.style.backgroundColor = '#000';
+        mainBtn.style.color = '#000';
         darkModeButton.style.color = '#fff';
         addTaskButton.style.backgroundColor = '#fff';
         addTaskButton.style.color = '#000';
@@ -266,9 +265,8 @@ darkModeButton.addEventListener('click', function () {
         document.body.style.backgroundColor = 'rgba(42, 42, 199, 0.682)';
         container.style.backgroundColor = 'rgba(178, 178, 238, 0.367)';
         mainBtn.style.backgroundColor = '#fff';
-        mainBtn.style.color = '#000';
-        darkModeButton.style.backgroundColor = '#fff';
-        darkModeButton.style.color = '#000';
+        mainBtn.style.color = 'rgba(42, 42, 199, 0.682)';
+        darkModeButton.style.color = '#fff';
         this.setAttribute('title', 'Change to Dark Mode');
 
         if (selectedButton === pomodoroBtn) {

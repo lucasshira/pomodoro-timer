@@ -117,11 +117,12 @@ button:active {
 
 #setting {
     position: fixed;
-    top: 65px;
-    right: 35%;
-    background-color: rgba(178, 178, 238, 0.367);
+    top: 12px;
+    right: 60px;
+    background-color: transparent;
     color: #fff;
     padding: 10px;
+    font-size: 24px;
     border-radius: 8px;
     cursor: pointer;
     border: none;
@@ -140,16 +141,58 @@ button:active {
 }
 
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     background-color: #fff;
+    height: 180px;
+    border-radius: 10px;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 600px;
+    max-width: 500px;
     position: relative;
 }
 
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#inputTimePomodoro {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    width: 200px;
+    font-size: 18px;
+    border: none;
+    background-color: #8888882d;
+    border-radius: 2px;
+    outline: none;
+}
+
+#okBtn {
+    background-color: #000000c9;
+    color: #fff;
+    border: none;
+    width: 70px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#okBtn:hover {
+    background-color: #000;
+}
+
 .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
     color: #aaa;
     float: right;
     font-size: 28px;
@@ -168,6 +211,8 @@ button:active {
     text-align: center;
     padding: 12px;
     border-radius: 50%;
+    background-color: transparent;
+    color: #fff;
     cursor: pointer;
     position: fixed;
     top: 15px;
@@ -177,7 +222,6 @@ button:active {
 
 #darkModeButton:hover {
     color: black;
-    background-color: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -187,8 +231,12 @@ button:active {
         padding: 10px;
     }
 
+    h1 {
+        font-size: 20px;
+    }
+
     .relogio {
-        font-size: 4em;
+        font-size: 5em;
     }
 
     .styled-input {
@@ -201,9 +249,15 @@ button:active {
     }
 
     #setting {
-        top: 20px;
-        left: 80%;
+        top: 13px;
+        right: 30px;
         transform: translateX(-50%);
+        font-size: 18px;
+    }
+
+    #darkModeButton {
+        font-size: 10px;
+        right: 10px;
     }
 
     button {
@@ -215,5 +269,10 @@ button:active {
     .mainBtn {
         padding: 15px 40px;
         font-size: 20px;
+    }
+
+    .modal-content {
+        text-align: center;
+        height: 220px;
     }
 }
