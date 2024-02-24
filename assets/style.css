@@ -235,27 +235,32 @@ button:active {
     color: black;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
     .container {
+        position: relative;
         max-width: 90%;
-        margin: 40px auto;
+        height: 280px;
+        margin: 35px auto;
         padding: 10px;
     }
 
     h1 {
-        font-size: 20px;
+        display: flex;
+        align-items: start;
+        font-size: 22px;
     }
 
     .relogio {
-        font-size: 5em;
+        font-size: 4.8em;
     }
 
     .styled-input {
-        width: 50%;
+        width: 70%;
+        margin-top: 30px;
     }
 
     .pomodoroBtn, .shortBreak, .longBreak {
-        font-size: 14px;
+        font-size: 0.7em;
         padding: 5px 10px;
     }
 
@@ -278,7 +283,11 @@ button:active {
     }
 
     .mainBtn {
-        padding: 15px 40px;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 50px;
         font-size: 20px;
     }
 
