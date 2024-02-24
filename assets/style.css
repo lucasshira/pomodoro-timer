@@ -65,18 +65,24 @@ h1 {
 }
 
 .styled-input {
-    width: 20%;
-    margin-top: 15px;
-    padding: 10px;
-    border: 1px solid #0056b3;
+    width: 25%;
+    margin: 20px;
+    padding: 20px;
     border-radius: 5px;
     font-size: 16px;
+    border: none;
+    font-weight: bold;
+}
+
+.styled-input::placeholder {
+    font-style: italic;
+    font-weight: bold;
 }
 
 .pomodoroBtn, .shortBreak, .longBreak {
     border-radius: 5px;
     border: none;
-    font-size: 15px;
+    font-size: 16px;
     padding: 5px 15px;
     background-color: rgba(178, 178, 238, 0);
     color: #fff;
@@ -191,12 +197,17 @@ button:active {
 
 .close {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 5px;
+    right: 15px;
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: 32px;
     font-weight: bold;
+    transition: all 100ms;
+}
+
+.close:hover {
+    transform: scale(1.2);
 }
 
 .close:hover,

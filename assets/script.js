@@ -284,3 +284,19 @@ darkModeButton.addEventListener('click', function () {
         }
     }
 });
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth < 400) {
+        pomodoroBtn.textContent = "Pomo";
+        shortBreak.textContent = "Short";
+        longBreak.textContent = "Long";
+    }
+});
+
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 400) {
+        pomodoroBtn.textContent = "Pomodoro";
+        shortBreak.textContent = "Short Break";
+        longBreak.textContent = "Long Break";
+    }
+})
