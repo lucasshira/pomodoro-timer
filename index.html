@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="Eo_circle_purple_checkmark.svg.png">
     <title>Pomodoro Timer</title>
 </head>
 <body>
@@ -22,8 +23,14 @@
         <p id="taskDescription">Time to focus!</p>
     </div>
 
-    <div class="task-list">
-        <button id="addTaskButton" onclick="openTaskDialog()">Add Task</button>
+    <div class="tasksDiv">
+        <div class="task-list">
+            <button id="addTaskButton" onclick="openTaskDialog()">Add Task</button>
+        </div>
+
+        <div class="task-list-close">
+            <button>Close</button>
+        </div>
     </div>
 
     <audio id="alarmSound">
@@ -37,7 +44,7 @@
     </div>
     <div id="modal" class="modal">
         <div class="modal-content">
-            <h2>Set the Pomodoro Timer:</h2>
+            <h2>Set the Pomodoro Timer</h2>
             <span class="close">&times;</span>
             <input id="inputTimePomodoro" placeholder="Time (minutes)"/>
             <button type="" id="okBtn">OK</button>

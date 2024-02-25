@@ -79,14 +79,19 @@ h1 {
     font-weight: bold;
 }
 
+.TasksDiv {
+    display: flex;
+    flex-direction: column;
+}
+
 .pomodoroBtn, .shortBreak, .longBreak {
     border-radius: 5px;
     border: none;
     font-size: 16px;
+    font-weight: bold;
     padding: 5px 15px;
     background-color: rgba(178, 178, 238, 0);
     color: #fff;
-    font-weight: bold;
     cursor: pointer;
 }
 
@@ -177,7 +182,7 @@ button:active {
     font-size: 18px;
     border: none;
     background-color: #8888882d;
-    border-radius: 2px;
+    border-radius: 5px;
     outline: none;
 }
 
@@ -293,6 +298,6 @@ button:active {
 
     .modal-content {
         text-align: center;
-        height: 220px;
+        height: auto;
     }
 }

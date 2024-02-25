@@ -12,6 +12,7 @@ const okBtn = document.getElementById('okBtn');
 const inputTimePomodoro = document.getElementById('inputTimePomodoro');
 const addTaskButton = document.getElementById('addTaskButton');
 const taskList = document.querySelector('.task-list');
+const taskListClose = document.querySelector('.task-list-close');
 
 let minutos = 25;
 let segundos = 0;
@@ -21,6 +22,7 @@ let emExecucao = false;
 let emIntervaloCurto = false;
 let selectedButton = null;
 let mainBtnClicked = false;
+let taskDialogOpened = false;
 
 selectButton(pomodoroBtn);
 
@@ -82,27 +84,37 @@ function reiniciarPomodoro() {
 }
 
 function openTaskDialog() {
-    if (document.querySelector('#taskInput')) {
-        return;
+    // Verificar se o diálogo de tarefas já está aberto
+    if (!taskDialogOpened) {
+        const inputElement = document.createElement('input');
+        inputElement.setAttribute('type', 'text');
+        inputElement.setAttribute('id', 'taskInput');
+        inputElement.setAttribute('placeholder', 'What are you working on?');
+        inputElement.classList.add('styled-input');
+
+        taskList.appendChild(inputElement);
+        taskListClose.style.display = 'block';
+
+        // Adicionar event listener para o botão de adicionar tarefa
+        addTaskButton.addEventListener('click', function () {
+            const taskDescription = document.getElementById('taskInput').value;
+            if (taskDescription.trim() !== "") {
+                document.getElementById('taskDescription').textContent = taskDescription;
+                inputElement.remove();
+                taskDialogOpened = false;
+            }
+        });
+
+        taskListClose.addEventListener('click', function () {
+            inputElement.style.display = 'none';
+            taskListClose.style.display = 'none';
+            taskDialogOpened = false;
+        });
+
+        inputElement.focus();
+
+        taskDialogOpened = true;
     }
-
-    const inputElement = document.createElement('input');
-    inputElement.setAttribute('type', 'text');
-    inputElement.setAttribute('id', 'taskInput');
-    inputElement.setAttribute('placeholder', 'What are you working on?');
-    inputElement.classList.add('styled-input');
-
-    taskList.appendChild(inputElement);
-
-    addTaskButton.addEventListener('click', function (event) {
-        const taskDescription = document.getElementById('taskInput').value;
-        if (taskDescription.trim() !== "") {
-            document.getElementById('taskDescription').textContent = taskDescription;
-            inputElement.remove();
-        }
-    });
-
-    inputElement.focus();
 }
 
 pomodoroBtn.addEventListener('click', function () {
@@ -240,7 +252,6 @@ okBtn.addEventListener('click', function() {
     minutos = inputValue;
     atualizarInterface();
     
-    console.log("Valor inserido:", inputValue);
     modal.style.display = "none";
 });
 
