@@ -85,27 +85,34 @@ function reiniciarPomodoro() {
 
 function openTaskDialog() {
     if (!taskDialogOpened) {
+        const taskList = document.querySelector('.task-list');
         const inputElement = document.createElement('input');
         inputElement.setAttribute('type', 'text');
         inputElement.setAttribute('id', 'taskInput');
         inputElement.setAttribute('placeholder', 'What are you working on?');
         inputElement.classList.add('styled-input');
 
-        taskList.appendChild(inputElement);
-        taskListClose.style.display = 'block';
+        const closeInput = document.createElement('button');
+        closeInput.classList.add('close-input');
+        closeInput.innerHTML = 'Close';
+
+        const inputContainer = document.createElement('div');
+        inputContainer.classList.add('input-container');
+        inputContainer.appendChild(inputElement);
+        inputContainer.appendChild(closeInput);
+        taskList.appendChild(inputContainer);
 
         addTaskButton.addEventListener('click', function () {
             const taskDescription = document.getElementById('taskInput').value;
             if (taskDescription.trim() !== "") {
                 document.getElementById('taskDescription').textContent = taskDescription;
-                inputElement.remove();
+                inputContainer.remove();
                 taskDialogOpened = false;
             }
         });
 
-        taskListClose.addEventListener('click', function () {
-            inputElement.remove();
-            taskListClose.style.display = 'none';
+        closeInput.addEventListener('click', function () {
+            inputContainer.remove();
             taskDialogOpened = false;
         });
 

@@ -68,9 +68,9 @@ h1 {
 }
 
 .styled-input {
-    width: 25%;
-    margin: 20px;
-    padding: 20px;
+    width: 300px;
+    margin: 15px 10px;
+    padding: 15px;
     border-radius: 5px;
     font-size: 16px;
     border: none;
@@ -83,9 +83,21 @@ h1 {
     font-weight: bold;
 }
 
-.TasksDiv {
+.tasksDiv {
     display: flex;
     flex-direction: column;
+}
+
+.close-input {
+    background-color: rgba(178, 178, 238, 0.367);
+    color: #fff;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
 }
 
 .pomodoroBtn, .shortBreak, .longBreak {
