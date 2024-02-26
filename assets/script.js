@@ -84,7 +84,6 @@ function reiniciarPomodoro() {
 }
 
 function openTaskDialog() {
-    // Verificar se o diálogo de tarefas já está aberto
     if (!taskDialogOpened) {
         const inputElement = document.createElement('input');
         inputElement.setAttribute('type', 'text');
@@ -95,7 +94,6 @@ function openTaskDialog() {
         taskList.appendChild(inputElement);
         taskListClose.style.display = 'block';
 
-        // Adicionar event listener para o botão de adicionar tarefa
         addTaskButton.addEventListener('click', function () {
             const taskDescription = document.getElementById('taskInput').value;
             if (taskDescription.trim() !== "") {
@@ -106,7 +104,7 @@ function openTaskDialog() {
         });
 
         taskListClose.addEventListener('click', function () {
-            inputElement.style.display = 'none';
+            inputElement.remove();
             taskListClose.style.display = 'none';
             taskDialogOpened = false;
         });

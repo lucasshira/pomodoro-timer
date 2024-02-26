@@ -62,6 +62,9 @@ h1 {
     padding: 15px 50px;
     border-radius: 10px;
     margin-top: 10px;
+    font-family: inherit;
+    color: #fff;
+    font-weight: bold;
 }
 
 .styled-input {
@@ -72,6 +75,7 @@ h1 {
     font-size: 16px;
     border: none;
     font-weight: bold;
+    font-family: inherit;
 }
 
 .styled-input::placeholder {
@@ -245,7 +249,6 @@ button:active {
         position: relative;
         max-width: 90%;
         height: 280px;
-        margin: 35px auto;
         padding: 10px;
     }
 
@@ -256,7 +259,8 @@ button:active {
     }
 
     .relogio {
-        font-size: 4.8em;
+        font-size: 4.6em;
+        margin-top: 35px;
     }
 
     .styled-input {
@@ -284,16 +288,17 @@ button:active {
     button {
         max-width: 100%;
         padding: 10px 20px;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .mainBtn {
         position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
+        bottom: -5px;
+        left: 25%;
         padding: 15px 50px;
         font-size: 20px;
+        border: none;
+        cursor: pointer;
     }
 
     .modal-content {
