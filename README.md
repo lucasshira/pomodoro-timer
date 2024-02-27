@@ -2,13 +2,7 @@
 
 ![Pomodoro Print](pomodoro%20print.PNG)
 
-This Pomodoro Timer project is inspired by the popular Pomodoro technique for time management. It is built using Vanilla JavaScript, without any additional frameworks.
-
-## Introduction
-
-The Pomodoro Technique is a time management method, it uses a timer to break work into intervals, traditionally 25 minutes in length, separated by short or long breaks. This technique aims to improve productivity and focus by encouraging consistent work and regular breaks.
-
-This Pomodoro Timer project provides a simple and intuitive interface to apply the Pomodoro Technique in your work or study sessions.
+This Pomodoro Timer provides a simple and intuitive interface to apply the Pomodoro Technique for time management in your work or study sessions. It is built using Vanilla JavaScript, without any additional frameworks.
 
 ## Features
 
