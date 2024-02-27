@@ -293,6 +293,9 @@ darkModeButton.addEventListener('click', function () {
         longBreak.style.backgroundColor = '#000';
         mainBtn.style.color = '#000';
         darkModeButton.style.color = '#fff';
+        addTaskButton.style.backgroundColor = '#fff'
+        addTaskButton.style.color = '#000';
+        closeInput.style.backgroundColor = '#010';
         this.setAttribute('title', 'Change to Light Mode');
     } else {
         document.body.style.backgroundColor = 'rgba(42, 42, 199, 0.682)';
@@ -302,6 +305,7 @@ darkModeButton.addEventListener('click', function () {
         darkModeButton.style.color = '#fff';
         addTaskButton.style.backgroundColor = 'rgba(178, 178, 238, 0.367)';
         addTaskButton.style.color = '#fff';
+        closeInput.style.backgroundColor = 'rgba(178, 178, 238, 0.367)';
         this.setAttribute('title', 'Change to Dark Mode');
 
         if (selectedButton === pomodoroBtn) {
