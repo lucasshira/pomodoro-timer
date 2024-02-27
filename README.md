@@ -1,15 +1,8 @@
 # Pomodoro Timer
 
+![Pomodoro Print](pomodoro%20print.PNG)
+
 This Pomodoro Timer project is inspired by the popular Pomodoro technique for time management. It is built using Vanilla JavaScript, without any additional frameworks.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Demo](#demo)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
@@ -36,10 +29,11 @@ To use the Pomodoro Timer:
 
 1. Open the application in your web browser.
 2. Set the desired durations for work and break sessions.
-3. Click the "Start" button to begin the timer.
-4. Focus on your work during the work session.
-5. Take a break when the timer notifies you.
-6. Repeat the process as needed to manage your time effectively.
+3. Optionally, enter a new task to be completed during the Pomodoro session.
+4. Click the "Start" button to begin the timer.
+5. Focus on your work during the work session.
+6. Take a break when the timer notifies you.
+7. Repeat the process as needed to manage your time effectively.
 
 ## Contributing
 
