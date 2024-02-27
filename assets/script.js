@@ -23,6 +23,7 @@ let emIntervaloCurto = false;
 let selectedButton = null;
 let mainBtnClicked = false;
 let taskDialogOpened = false;
+let taskInput;
 
 selectButton(pomodoroBtn);
 
@@ -55,13 +56,13 @@ function updatePageTitle() {
 setInterval(updatePageTitle, 1000);
 
 function shortBreakTime() {
-        minutos = 5;
-        segundos = 0;
-        atualizarInterface();
-        selectButton(shortBreak);
-        if (minutos === 0 && segundos === 0) {
-            playAlarmSound();
-            reiniciarPomodoro();
+    minutos = 5;
+    segundos = 0;
+    atualizarInterface();
+    selectButton(shortBreak);
+    if (minutos === 0 && segundos === 0) {
+        playAlarmSound();
+        reiniciarPomodoro();
     }
 }
 
@@ -83,6 +84,10 @@ function reiniciarPomodoro() {
     exibirBotoes();
 }
 
+const closeInput = document.createElement('button');
+closeInput.classList.add('close-input');
+closeInput.innerHTML = 'Close';
+
 function openTaskDialog() {
     if (!taskDialogOpened) {
         const taskList = document.querySelector('.task-list');
@@ -92,15 +97,13 @@ function openTaskDialog() {
         inputElement.setAttribute('placeholder', 'What are you working on?');
         inputElement.classList.add('styled-input');
 
-        const closeInput = document.createElement('button');
-        closeInput.classList.add('close-input');
-        closeInput.innerHTML = 'Close';
-
         const inputContainer = document.createElement('div');
         inputContainer.classList.add('input-container');
         inputContainer.appendChild(inputElement);
         inputContainer.appendChild(closeInput);
         taskList.appendChild(inputContainer);
+
+        taskInput = inputElement;
 
         addTaskButton.addEventListener('click', function () {
             const taskDescription = document.getElementById('taskInput').value;
@@ -219,7 +222,12 @@ mainBtn.addEventListener('click', function () {
         iniciarPomodoro();
         ocultarBotoes();
         addTaskButton.style.display = 'none';
-        taskInput.style.display = 'none';
+        if (taskInput) {
+            taskInput.style.display = 'none';
+        }
+        if (closeInput) {
+            closeInput.style.display = 'none';
+        }
     } else if (emExecucao) {
         clearInterval(intervalo);
         emExecucao = false;
@@ -227,14 +235,24 @@ mainBtn.addEventListener('click', function () {
         mainBtn.setAttribute('title', 'Press spacebar to start/pause');
         exibirBotoes();
         addTaskButton.style.display = 'block';
-        taskInput.style.display = 'block';
+        if (taskInput) {
+            taskInput.style.display = 'inline';
+        }
+        if (closeInput) {
+            closeInput.style.display = 'inline';
+        }
     } else {
         intervalo = setInterval(iniciarPomodoro, 1000);
         emExecucao = true;
         mainBtn.textContent = 'PAUSE';
         ocultarBotoes();
         addTaskButton.style.display = 'none';
-        taskInput.style.display = 'none';
+        if (taskInput) {
+            taskInput.style.display = 'none';
+        }
+        if (closeInput) {
+            closeInput.style.display = 'none';
+        }
     }
 });
 
@@ -255,6 +273,7 @@ window.addEventListener('click', function(event) {
 okBtn.addEventListener('click', function() {
     const inputValue = inputTimePomodoro.value;
     minutos = inputValue;
+    segundos = 0;
     atualizarInterface();
     
     modal.style.display = "none";
