@@ -65,6 +65,7 @@ h1 {
     font-family: inherit;
     color: #fff;
     font-weight: bold;
+    font-size: 16px;
 }
 
 .styled-input {
@@ -304,13 +305,12 @@ button:active {
     }
 
     .mainBtn {
-        position: absolute;
-        bottom: -5px;
-        left: 25%;
-        padding: 15px 50px;
-        font-size: 20px;
+        margin-top: 30px;
+        padding: 17px 62px;
+        font-size: 22px;
         border: none;
         cursor: pointer;
+        border-radius: 4px;
     }
 
     .modal-content {
